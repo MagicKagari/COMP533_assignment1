@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<urn:URNspec xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fm="http:///fm.ecore" xmlns:grl="http:///grl.ecore" xmlns:ucm.map="http:///ucm/map.ecore" xmlns:urn="http:///urn.ecore" name="URNspec" author="enewe101" created="September 20, 2014 6:34:27 PM EDT" modified="September 22, 2014 7:41:34 PM EDT" specVersion="32" urnVersion="1.27" nextGlobalID="1841">
+<urn:URNspec xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fm="http:///fm.ecore" xmlns:grl="http:///grl.ecore" xmlns:ucm.map="http:///ucm/map.ecore" xmlns:urn="http:///urn.ecore" name="URNspec" author="enewe101" created="September 20, 2014 6:34:27 PM EDT" modified="September 23, 2014 11:13:49 AM EDT" specVersion="35" urnVersion="1.27" nextGlobalID="1848">
   <ucmspec>
     <scenarioGroups name="ScenarioGroup7" id="7">
       <scenarios name="ScenarioDef8" id="8"/>
@@ -43,27 +43,28 @@
     <intElements name="Show Less Infomation to Public" id="874" linksDest="883" linksSrc="895" type="Goal" refs="875"/>
     <intElements name="Easy Interface to Use" id="885" linksDest="900" linksSrc="898" type="Goal" refs="886"/>
     <intElements name="Easy for Various People to Understand" id="887" linksDest="901 902" linksSrc="897" type="Goal" refs="888"/>
-    <intElements name="Maximize Profit" id="1733" linksDest="1803 1804" type="Goal" importance="High" importanceQuantitative="100" refs="1734"/>
-    <intElements name="Maximize Attractiveness to Customers" id="1735" linksDest="1799 1800 1801 1802" type="Goal" importance="High" importanceQuantitative="100" refs="1736"/>
-    <intElements name="Maximize Customer Throughput" id="1737" linksDest="1791 1810 1815 1821 1836" linksSrc="1803" type="Goal" refs="1738"/>
+    <intElements name="Maximize Profit" id="1733" linksDest="1803 1804" importance="High" importanceQuantitative="100" refs="1734"/>
+    <intElements name="Maximize Attractiveness to Customers" id="1735" linksDest="1799 1800 1801 1802" importance="High" importanceQuantitative="100" refs="1736"/>
+    <intElements name="Maximize Customer Throughput" id="1737" linksDest="1791 1810 1815 1821 1836" linksSrc="1803" refs="1738"/>
     <intElements name="Minimize costs to bank" id="1739" linksDest="1812 1813" linksSrc="1804" type="Goal" refs="1740"/>
     <intElements name="Minimize costs to customer" id="1741" linksDest="1789 1790" linksSrc="1800" type="Goal" refs="1742"/>
     <intElements name="Charge customer for transactions with other banks" id="1743" linksSrc="1789 1812" type="Task" refs="1744"/>
     <intElements name="Charge customer for transactions with this bank" id="1745" linksSrc="1790 1813" type="Task" refs="1746"/>
-    <intElements name="Minimize Theft" id="1747" linksDest="1797 1798 1807 1808 1838" linksSrc="1799" type="Goal" refs="1748"/>
+    <intElements name="Minimize Theft" id="1747" linksDest="1797 1798 1807 1808 1838" linksSrc="1799" refs="1748"/>
     <intElements name="Retinal scan" id="1749" linksSrc="1774 1793 1808" type="Task" refs="1750"/>
-    <intElements name="Fingerprint scan" id="1751" linksSrc="1775 1794 1807" type="Task" refs="1752"/>
+    <intElements name="Fingerprint scan" id="1751" linksSrc="1775 1794 1807 1847" type="Task" refs="1752"/>
     <intElements name="Use biometrics" id="1755" linksDest="1774 1775" linksSrc="1791 1840" type="Task" decompositionType="Or" refs="1756"/>
-    <intElements name="Minimze invasiveness" id="1757" linksDest="1784 1793 1794" linksSrc="1801" type="Goal" refs="1758"/>
+    <intElements name="Minimze invasiveness" id="1757" linksDest="1784 1793 1794" linksSrc="1801" refs="1758"/>
     <intElements name="Use keyed authentication" id="1759" linksDest="1776 1777" linksSrc="1784 1810" type="Task" decompositionType="Xor" refs="1760"/>
     <intElements name="Four-digit PIN" id="1761" linksSrc="1776 1797" type="Task" refs="1762"/>
     <intElements name="Arbitrary-length PIN" id="1763" linksSrc="1777 1798" type="Task" refs="1764"/>
-    <intElements name="Accessibility" id="1765" linksDest="1781 1782" linksSrc="1802" type="Goal" refs="1766"/>
+    <intElements name="Accessibility" id="1765" linksDest="1781 1782" linksSrc="1802" refs="1766"/>
     <intElements name="Braille keypad" id="1767" linksSrc="1782" type="Task" refs="1768"/>
     <intElements name="Text-to-speech menus" id="1769" linksSrc="1781 1815" type="Task" refs="1770"/>
     <intElements name="Quick withdrawal option in main menu" id="1817" linksDest="1833 1834" linksSrc="1821" type="Task" decompositionType="Xor" refs="1818"/>
     <intElements name="Quick withdrawal without authentication" id="1825" linksSrc="1833 1836 1838" type="Task" refs="1826"/>
     <intElements name="Quick withdrawal with authentication" id="1829" linksDest="1840" linksSrc="1834" type="Task" refs="1830"/>
+    <intElements name="Sample Task" id="1842" linksDest="1847" type="Task" refs="1843"/>
     <actors name="Customer" id="838" contRefs="839" importance="High" importanceQuantitative="100"/>
     <actors name="Bank" id="1771" contRefs="1772" importance="High" importanceQuantitative="75"/>
     <links xsi:type="fm:MandatoryFMLink" name="Mandatory685" id="685" refs="//@urndef/@specDiagrams.0/@connections.0" dest="670" src="676" contribution="Unknown" quantitativeContribution="0"/>
@@ -129,6 +130,7 @@
     <links xsi:type="grl:Contribution" name="Contribution1836" id="1836" refs="//@urndef/@specDiagrams.5/@connections.29" dest="1737" src="1825"/>
     <links xsi:type="grl:Contribution" name="Contribution1838" id="1838" refs="//@urndef/@specDiagrams.5/@connections.30" dest="1747" src="1825" contribution="SomeNegative" quantitativeContribution="-50"/>
     <links xsi:type="grl:Dependency" name="Dependency1840" id="1840" refs="//@urndef/@specDiagrams.5/@connections.31" dest="1829" src="1755"/>
+    <links xsi:type="grl:Dependency" name="Dependency1847" id="1847" refs="//@urndef/@specDiagrams.5/@connections.32" dest="1842" src="1751"/>
     <groups name="StrategiesGroup5" id="5" strategies="6"/>
     <strategies name="EvaluationStrategy6" id="6" author="enewe101" group="5"/>
     <impactModel/>
@@ -797,7 +799,7 @@
         <metadata name="_width" value="135"/>
         <metadata name="_height" value="38"/>
       </nodes>
-      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef1752" id="1752" x="775" y="796" contRef="1772" succ="//@urndef/@specDiagrams.5/@connections.1 //@urndef/@specDiagrams.5/@connections.11 //@urndef/@specDiagrams.5/@connections.20" def="1751">
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef1752" id="1752" x="775" y="796" contRef="1772" succ="//@urndef/@specDiagrams.5/@connections.1 //@urndef/@specDiagrams.5/@connections.11 //@urndef/@specDiagrams.5/@connections.20" pred="//@urndef/@specDiagrams.5/@connections.32" def="1751">
         <metadata name="_width" value="141"/>
         <metadata name="_height" value="40"/>
       </nodes>
@@ -845,7 +847,11 @@
         <metadata name="_width" value="162"/>
         <metadata name="_height" value="46"/>
       </nodes>
-      <contRefs xsi:type="grl:ActorRef" name="ActorRef1772" id="1772" x="-245" y="38" width="2105" height="1191" contDef="1771" nodes="1738 1740 1742 1744 1746 1748 1750 1752 1756 1758 1760 1762 1764 1766 1768 1770 1734 1736 1818 1826 1830">
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef1843" id="1843" x="763" y="906" contRef="1772" succ="//@urndef/@specDiagrams.5/@connections.32" def="1842">
+        <metadata name="_width" value="159"/>
+        <metadata name="_height" value="51"/>
+      </nodes>
+      <contRefs xsi:type="grl:ActorRef" name="ActorRef1772" id="1772" x="-245" y="38" width="2105" height="1191" contDef="1771" nodes="1738 1740 1742 1744 1746 1748 1750 1752 1756 1758 1760 1762 1764 1766 1768 1770 1734 1736 1818 1826 1830 1843">
         <label/>
       </contRefs>
       <connections xsi:type="grl:LinkRef" source="1750" target="1756" link="1774"/>
@@ -932,6 +938,7 @@
         <bendpoints x="621" y="566"/>
       </connections>
       <connections xsi:type="grl:LinkRef" source="1830" target="1756" link="1840"/>
+      <connections xsi:type="grl:LinkRef" source="1843" target="1752" link="1847"/>
     </specDiagrams>
     <components name="Customer" id="164" contRefs="165 998" kind="Actor"/>
     <components name="ATM" id="170" contRefs="196 1000" kind="Agent"/>

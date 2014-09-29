@@ -1,0 +1,131 @@
+\documentclass[10pt,fleqn]{article}
+\usepackage{microtype}                  % improved microtypography
+\usepackage[utf8]{inputenc}             % utf8 encoding
+\usepackage{times}                      % times font
+\usepackage{mathptmx}                   % math font
+\gdef\ttdefault{cmtt}%                                       
+\usepackage{graphicx}                   % graphics
+\usepackage{xcolor}                     % colors
+\usepackage{amsmath}                    % ams math commands
+\usepackage[margin=2.54cm]{geometry}    % page layout
+\usepackage[english]{babel}             % english typographic rules
+\usepackage{titling}                    % to control the position of the title
+
+%----------------------------------------------
+% title page
+\setlength{\droptitle}{-6em}            % move the title up a bit
+\title{ECSE 539 / COMP 533 Assignment 1}
+\author{Patrick Diez (260276972), Edward Newell (123456789), Ran Gao (260501253)}
+
+%-------------------------------------------
+\begin{document}
+\maketitle                              % creates title page
+
+
+\section{Task Breakdown}
+\paragraph{\textbf{Ran Gao}}
+	\begin{enumerate}
+		\item{plugin map for the withdraw stub.}
+		\item{GRL for the customer}
+		\item{Overview GRL}
+	\end{enumerate}
+
+\paragraph{\textbf{Pat Diez}}
+	\begin{enumerate}
+		\item{plugin map for the deposit stub.}
+		\item{GRL for the Bank}
+		\item{Overview GRL}
+	\end{enumerate} 
+
+\paragraph{\textbf{Edward Newell}}
+	\begin{enumerate}
+		\item{Root map, with pseudocode to define the execution path}
+		\item{GRL for the Manufacturer}
+		\item{Overview GRL}
+		\item{Plugin maps for the authentication stub.}
+	\end{enumerate}
+
+\section{System Description}
+We choose to model an automated teller machine (ATM), which allows banking
+customers to make various transactions, including deposits and withdrawals to
+their bank accounts.  The ATM is produced by a manufacturer, deployed and 
+managed by a bank and used by a customer; we model the goals of these three 
+stakeholders and their dependencies.  In a typical scenario, a customer
+arives at the ATM, authenticates, and then chooses a kind of transaction.
+Depending on the selection of features, the user can authenticate by card and
+PIN, or using certain biometrics.  
+
+We modeled two choices of transactions in
+detail: deposits and withdrawals.  In general, customer can do multiple 
+transactions, which we demonstrate by modelling both a deposit and withdrawal
+in our scenario (used for each strategy).  This is a realistic usage scenario,
+since, after depositing a paycheque, a customer might well wish to withdraw
+cash.  We investigate the performance of the system, in terms of satisfying
+stakeholders' goals, by modeling three strategies.  In the first strategy,
+we compare our ATM solution to the usual manual solution, wherin the customer
+goes to the banking counter and transacts with a (human) teller.  In the 
+next two scenarios, we use two different selections of features.  The first
+\textit{low security} strategy uses a conventional card/PIN authentication,
+and does not include the security camera options.  The second 
+\textit{high security} strategy implements biometric authentication and 
+includes security cameras.  In terms of its direct impacts, chosing high 
+security increases the manufacturing costs, reduces servic calls (by 
+prevention of vandalism), increases banking and customer security, and 
+increases invasiveness.  Changing from one system configuration to the other
+has a complex set of impacts to stakeholder's goals which are especially 
+difficult to resolve given the tight interdependencies of the stakeholders.
+The modeling tool helped to reason clearly about the selection, and showed that
+the high security configuration is better for all stakeholders, despite
+having negative impacts on some goals.
+
+\section{Modeling Outcomes}
+\paragraph{What went well.}
+	The overall architecting of the system, including the division of tasks
+	went very smoothly.  The fact that we are using a tool that is
+	designed to communicate the structural, behavioral, and intentional 
+	aspects of a system made it quite easy to acheive consensus on what we
+	were going to model by just diving right in.
+\paragraph{What did not go well.}
+	One thing that was difficult was understanding how to handle the 
+	dependencies between stakeholders.  Of course, the modeling tool has a 
+	specific dependency link type designed for that purpose.  While that allows
+	us to show that stakeholder's goals are dependant on another, it can 
+	arise that one stakeholder $A$ has is its goal ensuring that another 
+	stakeholder $B$ achieves her goals.  This makes it tempting to actually
+	embed the goal structure of $B$ within $A$'s goals, in order to show that
+	$A$ is explicitly concerned about the impact that feature selections has 
+	on $B$.  We found that this could be handled by including copies of 
+	stakeholder $B$'s high-level goals in stakeholder $A$'s GRL.  Doing so
+	means that the impact of feature selections on stakeholder $A$ via effects
+	on stakeholder $B$ is properly computed, without having to repeat
+	stakeholder $B$'s detailed goal structure in stakeholder $A$'s map.
+
+	With repsect to using the tool itself, some difficulties were encountered.
+	The use of global \textsc{id}s for all elements inside the \texttt{.jucm} 
+	file makes it 
+	likely that concurrent editing of the same file will lead to conflicts
+	that are very difficult to resolve.  This is not the same kind of conflict
+	which normally arises when concurrent edits to the same file are made in
+	a programing language.  It is worth explaining why this is different.  
+	First, all of the maps in the \textsc{urn} model are stored in the same 
+	file, which
+	immediately increases the chance of conflicts.  But what makes this
+	particularly problematic is the use of global, incrementing \textsc{id}s 
+	to identify model elements.  Unless special steps are taken, 
+	concurrent edits are sure to have \textsc{id}s that collide.  When
+	editing computer code, such as Java,  programmers are 
+	less likely to declare new variables having the same names, and even if
+	they do, scoping rules are likely to prevent name-space collisions.  
+	We think that, in \texttt{.jucm} files, resolving \textsc{id} collisions 
+	requires 
+	reverting changes, and traking down and re-labelling all \textsc{id}s 
+	involved in 
+	one side of the collision which would be very tedious indeed.  We avoided 
+	this problem altogether by changing the 
+	\texttt{nextGloabalId} attribute in the \texttt{.jucm} file.  This 
+	technique does completely avoid collisions, but it is error-prone, 
+	because it relies on each developper resetting the \textsc{id} every time they pull
+	from the versioning system.
+
+	
+\end{document}

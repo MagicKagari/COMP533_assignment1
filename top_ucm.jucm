@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<urn:URNspec xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fm="http:///fm.ecore" xmlns:grl="http:///grl.ecore" xmlns:ucm.map="http:///ucm/map.ecore" xmlns:urn="http:///urn.ecore" name="URNspec" author="enewe101" created="September 20, 2014 6:34:27 PM EDT" modified="September 29, 2014 11:04:05 PM EDT" specVersion="204" urnVersion="1.27" nextGlobalID="1005705">
+<urn:URNspec xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fm="http:///fm.ecore" xmlns:grl="http:///grl.ecore" xmlns:ucm.map="http:///ucm/map.ecore" xmlns:urn="http:///urn.ecore" name="URNspec" author="enewe101" created="September 20, 2014 6:34:27 PM EDT" modified="September 29, 2014 10:52:20 PM EDT" specVersion="203" urnVersion="1.27" nextGlobalID="1005695">
   <ucmspec>
     <scenarioGroups name="ScenarioGroup7" id="7">
       <scenarios name="ScenarioDef8" id="8">
@@ -36,12 +36,9 @@
         <initializations value="true" variable="1004313"/>
         <initializations value="false" variable="1004314"/>
         <initializations value="true" variable="1004327"/>
-        <initializations value="false" variable="1005703"/>
         <startPoints enabled="true" startPoint="906"/>
         <startPoints enabled="true" startPoint="448"/>
-        <startPoints enabled="true" startPoint="448"/>
         <endPoints enabled="true" mandatory="true" endPoint="908"/>
-        <endPoints enabled="true" mandatory="true" endPoint="450"/>
       </scenarios>
       <scenarios name="ScenarioDef1002568" id="1002568">
         <initializations value="withdraw" variable="1002806"/>
@@ -63,76 +60,256 @@
     <variables name="doCompleteDeposit" id="1004313"/>
     <variables name="doCancelDeposit" id="1004314"/>
     <variables name="doConfirmCompletion" id="1004327"/>
-    <variables name="isManual" id="1005703"/>
     <enumerationTypes name="EnumerationType1900" id="1900" values="Cancel,Credit,Cheque,Saving" instances="1901"/>
     <enumerationTypes name="EnumerationType1002805" id="1002805" values="withdraw,balance,deposit,payBill" instances="1002806"/>
   </ucmspec>
   <grlspec>
-    <intElements xsi:type="fm:Feature" name="Automated Teller Machine" id="670" linksDest="685 686 687 1001842 1005606" type="Task" refs="671"/>
-    <intElements xsi:type="fm:Feature" name="Output Device" id="672" linksDest="725 1005578" linksSrc="687" type="Task" refs="673"/>
-    <intElements xsi:type="fm:Feature" name="Input Device" id="676" linksDest="696 698 788 1005593" linksSrc="685" type="Task" refs="677"/>
-    <intElements xsi:type="fm:Feature" name="Banking Features" id="678" linksDest="1001841 1005580 1005581 1005582 1005583" linksSrc="686" type="Task" decompositionType="Or" refs="679"/>
-    <intElements xsi:type="fm:Feature" name="Numeric Keypad" id="690" linksDest="753 755" linksSrc="696 2821" type="Task" refs="691 2819"/>
-    <intElements xsi:type="fm:Feature" name="Touch Screen" id="692" linksSrc="698 1002534 1002535 2831" type="Task" refs="693 1002362 2620"/>
-    <intElements xsi:type="fm:Feature" name="Function Buttons Beside Screen" id="705" linksSrc="1002532 1002533" type="Task" refs="1002264"/>
-    <intElements xsi:type="fm:Feature" name="Display Screen" id="713" linksSrc="725" type="Task" refs="714"/>
-    <intElements xsi:type="fm:Feature" name="Earphone Jack" id="715" linksSrc="1002530 1002531 1004545 1005578 1005585" type="Task" refs="716 2707 1002202"/>
-    <intElements xsi:type="fm:Feature" name="Braille Keypad" id="737" linksDest="1005585" linksSrc="755 2829" type="Task" refs="738 2463"/>
-    <intElements xsi:type="fm:Feature" name="Standard Keypad" id="743" linksSrc="753" type="Task" refs="744"/>
-    <intElements xsi:type="fm:Feature" name="Camera to see customer's face" id="768" linksSrc="1000269 1000311 1002536 1004715 1004846" type="Task" refs="769 2405 1000260"/>
-    <intElements xsi:type="fm:Feature" name="Camera to see customer's back" id="770" linksSrc="1000270 1000312 1002537 1004717 1004844" type="Task" refs="771 2301 1000203"/>
-    <intElements xsi:type="fm:Feature" name="Card Reader" id="782" linksDest="1004834" linksSrc="788 1002538 1002550" type="Task" refs="783 1001907"/>
-    <intElements xsi:type="fm:Feature" name="Card/PIN" id="808" linksSrc="1004370 1004422 1004743 1004832 1004834" type="Task" refs="1004360 809 1004741"/>
-    <intElements xsi:type="fm:Feature" name="Deposit" id="818" linksSrc="1000918 1002545 1002547 1003960 1005580" type="Task" refs="819 1000752 1002137 1003838"/>
-    <intElements xsi:type="fm:Feature" name="Bill Payments" id="820" linksSrc="1000917 1002542 1002544 1003961 1005582" type="Task" refs="821 1000597 1000951 1003953"/>
+    <intElements xsi:type="fm:Feature" name="Automated Teller Machine" id="670" linksDest="685 686 687 1001842 1005606" type="Task" refs="671">
+      <metadata name="_numEval" value="90"/>
+      <metadata name="_qualEval" value="WeaklySatisfied"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="Output Device" id="672" linksDest="725 1005578" linksSrc="687" type="Task" refs="673">
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="Input Device" id="676" linksDest="696 698 788 1005593" linksSrc="685" type="Task" refs="677">
+      <metadata name="_numEval" value="90"/>
+      <metadata name="_qualEval" value="WeaklySatisfied"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="Banking Features" id="678" linksDest="1001841 1005580 1005581 1005582 1005583" linksSrc="686" type="Task" decompositionType="Or" refs="679">
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="Numeric Keypad" id="690" linksDest="753 755" linksSrc="696 2821" type="Task" refs="691 2819">
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="Touch Screen" id="692" linksSrc="698 1002534 1002535 2831" type="Task" refs="693 1002362 2620">
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="Denied"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="Function Buttons Beside Screen" id="705" linksSrc="1002532 1002533" type="Task" refs="1002264">
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="Denied"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="Display Screen" id="713" linksSrc="725" type="Task" refs="714">
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="Earphone Jack" id="715" linksSrc="1002530 1002531 1004545 1005578 1005585" type="Task" refs="716 2707 1002202">
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="Braille Keypad" id="737" linksDest="1005585" linksSrc="755 2829" type="Task" refs="738 2463">
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="Standard Keypad" id="743" linksSrc="753" type="Task" refs="744">
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="Camera to see customer's face" id="768" linksSrc="1000269 1000311 1002536 1004715 1004846" type="Task" refs="769 2405 1000260">
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="Camera to see customer's back" id="770" linksSrc="1000270 1000312 1002537 1004717 1004844" type="Task" refs="771 2301 1000203">
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="Denied"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="Card Reader" id="782" linksDest="1004834" linksSrc="788 1002538 1002550" type="Task" refs="783 1001907">
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="Card/PIN" id="808" linksSrc="1004370 1004422 1004743 1004832 1004834" type="Task" refs="1004360 809 1004741">
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="Deposit" id="818" linksSrc="1000918 1002545 1002547 1003960 1005580" type="Task" refs="819 1000752 1002137 1003838">
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="Bill Payments" id="820" linksSrc="1000917 1002542 1002544 1003961 1005582" type="Task" refs="821 1000597 1000951 1003953">
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
+    </intElements>
     <intElements xsi:type="fm:Feature" name="Withdrawal" id="822" linksDest="1005649" linksSrc="1000919 1003958 1005581" type="Task" refs="823 1000916 1003922">
       <metadata name="_userSetEvaluationWarning" value="100 != 0"/>
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
     </intElements>
-    <intElements xsi:type="fm:Feature" name="View Balance" id="830" linksSrc="1000920 1003959 1005583" type="Task" refs="831 1000843 1003866"/>
-    <intElements name="Maximize Security" id="842" linksDest="893 1004745" linksSrc="1005174" importance="Low" importanceQuantitative="30" refs="843 1005173"/>
-    <intElements name="Maximize Convenience" id="844" linksDest="897 898 1000602" linksSrc="1005347" importance="Low" importanceQuantitative="25" refs="845 1005344"/>
-    <intElements name="Provide Secure Auth" id="870" linksDest="1004742 1004743" linksSrc="893" refs="871"/>
-    <intElements name="Easy Interface to Use" id="885" linksDest="2821 2831" linksSrc="898" refs="886"/>
-    <intElements name="Easy for Various People to Understand" id="887" linksDest="2829 1004545" linksSrc="897" refs="888"/>
-    <intElements name="Maximize Bank Profit" id="1733" linksDest="1803 1804 1005517" linksSrc="1005549 1005576" type="Goal" importance="High" importanceQuantitative="75" refs="1734 1005479 1005575"/>
-    <intElements name="Maximize Attractiveness to Customers" id="1735" linksDest="1800 1801 1005174 1005347 1005363 1005364 1005365 1005366" linksSrc="1005517" importance="Low" importanceQuantitative="25" refs="1736 3774"/>
-    <intElements name="Maximize Customer Throughput" id="1737" linksDest="1003963 1005683" linksSrc="1803" type="Goal" refs="1738"/>
-    <intElements name="Minimize costs to bank" id="1739" linksDest="1004974 1004978 1005449 1005519 1005692" linksSrc="1804" type="Goal" refs="1740 1005448"/>
-    <intElements name="Minimize costs to customer" id="1741" linksDest="1004976 1004979" linksSrc="1800" type="Goal" importance="Low" importanceQuantitative="30" refs="1742 1005057"/>
-    <intElements name="Biometrics" id="1749" linksSrc="1002540 1002541" type="Task" refs="1002513"/>
-    <intElements name="Fingerprint scan" id="1751" linksSrc="1002546 1002548" type="Task" refs="1002411"/>
-    <intElements name="Minimze invasiveness" id="1757" linksDest="1004830 1004832" linksSrc="1801" importance="Low" importanceQuantitative="15" refs="1758 1004828"/>
-    <intElements name="Increase Profit" id="1000008" linksDest="1000018 1000261 1005406" importance="Medium" importanceQuantitative="45" refs="1000009"/>
-    <intElements name="Increase market share" id="1000010" linksDest="1005550" linksSrc="1005406" importance="Medium" importanceQuantitative="55" refs="1000011"/>
-    <intElements name="Reduce Manufacturing Cost" id="1000012" linksDest="1000311 1000312 1002530 1002532 1002534 1002538 1002540 1002542 1002545 1002546 1002565" linksSrc="1000018 1005519" refs="1000013"/>
-    <intElements name="Reduce Service Calls and Returns" id="1000039" linksDest="1000268 1002531 1002533 1002535 1002536 1002537 1002541 1002544 1002547 1002548 1002550" linksSrc="1000261 1005449" refs="1000040"/>
-    <intElements name="Support Surveillance Services" id="1000264" linksDest="1000269 1000270" linksSrc="1000268" type="Goal" refs="1000265"/>
-    <intElements name="Obtain a variety of services" id="1000598" linksDest="1000917 1000918 1000919 1000920" linksSrc="1000602" refs="1000599"/>
-    <intElements xsi:type="fm:Feature" name="Authentication" id="1000952" linksDest="1004414 1004422 1004438" linksSrc="1005604" type="Task" decompositionType="Or" refs="1000953"/>
-    <intElements xsi:type="fm:Feature" name="Support Transaction Fees" id="1001835" linksDest="1004982 1004983" linksSrc="1001841 1001842" type="Task" decompositionType="Or" refs="1001836"/>
-    <intElements name="Reference Cost level" id="1002559" linksSrc="1002565" type="Task" refs="1002560"/>
-    <intElements name="Serve customers automatically" id="1003954" linksDest="1003958 1003959 1003960 1003961" linksSrc="1003963" refs="1003955"/>
-    <intElements name="Provide Secure Authentication" id="1004363" linksDest="1004370 1004543" linksSrc="1005691" type="Task" refs="1004364"/>
-    <intElements xsi:type="fm:Feature" name="Fingerprint Authentication" id="1004434" linksDest="1005651" linksSrc="1004438 1004543 1004742 1004830 1005595" type="Task" refs="1004435 1004542 1004710"/>
-    <intElements name="Provide physical security in premises" id="1004711" linksDest="1004715 1004717" linksSrc="1004745" refs="1004712"/>
-    <intElements xsi:type="fm:Feature" name="Physical Security of Premises" id="1004836" linksDest="1004844 1004846" linksSrc="1005605" type="Task" refs="1004837"/>
-    <intElements xsi:type="fm:Feature" name="Charge for transactions with this bank" id="1004850" linksSrc="1004974 1004976 1004982" type="Task" refs="1004851 1004937 1005133"/>
-    <intElements xsi:type="fm:Feature" name="Charge for transactions with competitor banks" id="1004852" linksSrc="1004978 1004979 1004983" type="Task" refs="1004853 1004973 1005101"/>
-    <intElements name="Minimize costs to customer_" id="1005351" linksSrc="1005363" type="Goal" refs="1005352"/>
-    <intElements name="Maximize Convenience_" id="1005353" linksSrc="1005364" refs="1005354"/>
-    <intElements name="Maximize Security_" id="1005355" linksSrc="1005365" refs="1005356"/>
-    <intElements name="Minimize Invasiveness_" id="1005359" linksSrc="1005366" refs="1005360"/>
-    <intElements name="Maximize Attractiveness to Bank" id="1005545" linksDest="1005549" linksSrc="1005550" refs="1005546"/>
-    <intElements name="Maximize Attractiveness to Bank_" id="1005552" linksDest="1005576" refs="1005553"/>
-    <intElements xsi:type="fm:Feature" name="Fingerprint scanner" id="1005587" linksDest="1005595" linksSrc="1005593" type="Task" refs="1005588"/>
+    <intElements xsi:type="fm:Feature" name="View Balance" id="830" linksSrc="1000920 1003959 1005583" type="Task" refs="831 1000843 1003866">
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
+    </intElements>
+    <intElements name="Maximize Security" id="842" linksDest="893 1004745" linksSrc="1005174" importance="Low" importanceQuantitative="30" refs="843 1005173">
+      <metadata name="_numEval" value="49"/>
+      <metadata name="_qualEval" value="WeaklyDenied"/>
+    </intElements>
+    <intElements name="Maximize Convenience" id="844" linksDest="897 898 1000602" linksSrc="1005347" importance="Low" importanceQuantitative="25" refs="845 1005344">
+      <metadata name="_numEval" value="85"/>
+      <metadata name="_qualEval" value="WeaklySatisfied"/>
+    </intElements>
+    <intElements name="Provide Secure Auth" id="870" linksDest="1004742 1004743" linksSrc="893" refs="871">
+      <metadata name="_numEval" value="50"/>
+      <metadata name="_qualEval" value="None"/>
+    </intElements>
+    <intElements name="Easy Interface to Use" id="885" linksDest="2821 2831" linksSrc="898" refs="886">
+      <metadata name="_numEval" value="75"/>
+      <metadata name="_qualEval" value="WeaklySatisfied"/>
+    </intElements>
+    <intElements name="Easy for Various People to Understand" id="887" linksDest="2829 1004545" linksSrc="897" refs="888">
+      <metadata name="_numEval" value="90"/>
+      <metadata name="_qualEval" value="WeaklySatisfied"/>
+    </intElements>
+    <intElements name="Maximize Bank Profit" id="1733" linksDest="1803 1804 1005517" linksSrc="1005549 1005576" type="Goal" importance="High" importanceQuantitative="75" refs="1734 1005479 1005575">
+      <metadata name="_numEval" value="66"/>
+      <metadata name="_qualEval" value="WeaklySatisfied"/>
+    </intElements>
+    <intElements name="Maximize Attractiveness to Customers" id="1735" linksDest="1800 1801 1005174 1005347 1005363 1005364 1005365 1005366" linksSrc="1005517" importance="Low" importanceQuantitative="25" refs="1736 3774">
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="Denied"/>
+    </intElements>
+    <intElements name="Maximize Customer Throughput" id="1737" linksDest="1003963 1005683" linksSrc="1803" type="Goal" refs="1738">
+      <metadata name="_numEval" value="67"/>
+      <metadata name="_qualEval" value="WeaklySatisfied"/>
+    </intElements>
+    <intElements name="Minimize costs to bank" id="1739" linksDest="1004974 1004978 1005449 1005519 1005692" linksSrc="1804" type="Goal" refs="1740 1005448">
+      <metadata name="_numEval" value="87"/>
+      <metadata name="_qualEval" value="WeaklySatisfied"/>
+    </intElements>
+    <intElements name="Minimize costs to customer" id="1741" linksDest="1004976 1004979" linksSrc="1800" type="Goal" importance="Low" importanceQuantitative="30" refs="1742 1005057">
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="Denied"/>
+    </intElements>
+    <intElements name="Biometrics" id="1749" linksSrc="1002540 1002541" type="Task" refs="1002513">
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="Denied"/>
+    </intElements>
+    <intElements name="Fingerprint scan" id="1751" linksSrc="1002546 1002548" type="Task" refs="1002411">
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="Denied"/>
+    </intElements>
+    <intElements name="Minimze invasiveness" id="1757" linksDest="1004830 1004832" linksSrc="1801" importance="Low" importanceQuantitative="15" refs="1758 1004828">
+      <metadata name="_numEval" value="25"/>
+      <metadata name="_qualEval" value="WeaklyDenied"/>
+    </intElements>
+    <intElements name="Increase Profit" id="1000008" linksDest="1000018 1000261 1005406" importance="Medium" importanceQuantitative="45" refs="1000009">
+      <metadata name="_numEval" value="26"/>
+      <metadata name="_qualEval" value="WeaklyDenied"/>
+    </intElements>
+    <intElements name="Increase market share" id="1000010" linksDest="1005550" linksSrc="1005406" importance="Medium" importanceQuantitative="55" refs="1000011">
+      <metadata name="_numEval" value="66"/>
+      <metadata name="_qualEval" value="WeaklySatisfied"/>
+    </intElements>
+    <intElements name="Reduce Manufacturing Cost" id="1000012" linksDest="1000311 1000312 1002530 1002532 1002534 1002538 1002540 1002542 1002545 1002546 1002565" linksSrc="1000018 1005519" refs="1000013">
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="Denied"/>
+    </intElements>
+    <intElements name="Reduce Service Calls and Returns" id="1000039" linksDest="1000268 1002531 1002533 1002535 1002536 1002537 1002541 1002544 1002547 1002548 1002550" linksSrc="1000261 1005449" refs="1000040">
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="Denied"/>
+    </intElements>
+    <intElements name="Support Surveillance Services" id="1000264" linksDest="1000269 1000270" linksSrc="1000268" type="Goal" refs="1000265">
+      <metadata name="_numEval" value="35"/>
+      <metadata name="_qualEval" value="WeaklyDenied"/>
+    </intElements>
+    <intElements name="Obtain a variety of services" id="1000598" linksDest="1000917 1000918 1000919 1000920" linksSrc="1000602" refs="1000599">
+      <metadata name="_numEval" value="90"/>
+      <metadata name="_qualEval" value="WeaklySatisfied"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="Authentication" id="1000952" linksDest="1004414 1004422 1004438" linksSrc="1005604" type="Task" decompositionType="Or" refs="1000953">
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="Support Transaction Fees" id="1001835" linksDest="1004982 1004983" linksSrc="1001841 1001842" type="Task" decompositionType="Or" refs="1001836">
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
+    </intElements>
+    <intElements name="Reference Cost level" id="1002559" linksSrc="1002565" type="Task" refs="1002560">
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="Denied"/>
+    </intElements>
+    <intElements name="Serve customers automatically" id="1003954" linksDest="1003958 1003959 1003960 1003961" linksSrc="1003963" refs="1003955">
+      <metadata name="_numEval" value="90"/>
+      <metadata name="_qualEval" value="WeaklySatisfied"/>
+    </intElements>
+    <intElements name="Provide Secure Authentication" id="1004363" linksDest="1004370 1004543" linksSrc="1005691" type="Task" refs="1004364">
+      <metadata name="_numEval" value="50"/>
+      <metadata name="_qualEval" value="None"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="Fingerprint Authentication" id="1004434" linksDest="1005651" linksSrc="1004438 1004543 1004742 1004830 1005595" type="Task" refs="1004435 1004542 1004710">
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="Denied"/>
+    </intElements>
+    <intElements name="Provide physical security in premises" id="1004711" linksDest="1004715 1004717" linksSrc="1004745" refs="1004712">
+      <metadata name="_numEval" value="50"/>
+      <metadata name="_qualEval" value="None"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="Physical Security of Premises" id="1004836" linksDest="1004844 1004846" linksSrc="1005605" type="Task" refs="1004837">
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="Charge for transactions with this bank" id="1004850" linksSrc="1004974 1004976 1004982" type="Task" refs="1004851 1004937 1005133">
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="Charge for transactions with competitor banks" id="1004852" linksSrc="1004978 1004979 1004983" type="Task" refs="1004853 1004973 1005101">
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
+    </intElements>
+    <intElements name="Minimize costs to customer_" id="1005351" linksSrc="1005363" type="Goal" refs="1005352">
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="Denied"/>
+    </intElements>
+    <intElements name="Maximize Convenience_" id="1005353" linksSrc="1005364" refs="1005354">
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="Denied"/>
+    </intElements>
+    <intElements name="Maximize Security_" id="1005355" linksSrc="1005365" refs="1005356">
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="Denied"/>
+    </intElements>
+    <intElements name="Minimize Invasiveness_" id="1005359" linksSrc="1005366" refs="1005360">
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="Denied"/>
+    </intElements>
+    <intElements name="Maximize Attractiveness to Bank" id="1005545" linksDest="1005549" linksSrc="1005550" refs="1005546">
+      <metadata name="_numEval" value="66"/>
+      <metadata name="_qualEval" value="WeaklySatisfied"/>
+    </intElements>
+    <intElements name="Maximize Attractiveness to Bank_" id="1005552" linksDest="1005576" refs="1005553">
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="Denied"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="Fingerprint scanner" id="1005587" linksDest="1005595" linksSrc="1005593" type="Task" refs="1005588">
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="Denied"/>
+    </intElements>
     <intElements xsi:type="fm:Feature" name="Security Features" id="1005600" linksDest="1005604 1005605" linksSrc="1005606" type="Task" refs="1005601">
       <metadata name="_userSetEvaluationWarning" value="100 != 50"/>
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
     </intElements>
-    <intElements xsi:type="fm:Feature" name="Quick withdrawal option" id="1005644" linksSrc="1005649 1005651 1005683" type="Task" refs="1005645 1005681"/>
-    <intElements name="Prevent cases of fraud and theft" id="1005687" linksDest="1005691" linksSrc="1005692" type="Goal" refs="1005688"/>
-    <actors name="Customer" id="838" contRefs="839 3039 1005403" importance="High" importanceQuantitative="100"/>
-    <actors name="Bank" id="1771" contRefs="1772 2977 1005516" importance="High" importanceQuantitative="75"/>
-    <actors name="Manufacturer" id="1000002" contRefs="1000003 1005544"/>
+    <intElements xsi:type="fm:Feature" name="Quick withdrawal option" id="1005644" linksSrc="1005649 1005651 1005683" type="Task" refs="1005645 1005681">
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="Denied"/>
+    </intElements>
+    <intElements name="Prevent cases of fraud and theft" id="1005687" linksDest="1005691" linksSrc="1005692" type="Goal" refs="1005688">
+      <metadata name="_numEval" value="50"/>
+      <metadata name="_qualEval" value="None"/>
+    </intElements>
+    <actors name="Customer" id="838" contRefs="839 3039 1005403" importance="High" importanceQuantitative="100">
+      <metadata name="_numEval" value="46"/>
+      <metadata name="_qualEval" value="WeaklyDenied"/>
+    </actors>
+    <actors name="Bank" id="1771" contRefs="1772 2977 1005516" importance="High" importanceQuantitative="75">
+      <metadata name="_numEval" value="54"/>
+      <metadata name="_qualEval" value="WeaklySatisfied"/>
+    </actors>
+    <actors name="Manufacturer" id="1000002" contRefs="1000003 1005544">
+      <metadata name="_numEval" value="48"/>
+      <metadata name="_qualEval" value="WeaklyDenied"/>
+    </actors>
     <links xsi:type="fm:MandatoryFMLink" name="Mandatory685" id="685" refs="//@urndef/@specDiagrams.3/@connections.0" dest="670" src="676" contribution="SomePositive"/>
     <links xsi:type="fm:MandatoryFMLink" name="Mandatory686" id="686" refs="//@urndef/@specDiagrams.3/@connections.1" dest="670" src="678"/>
     <links xsi:type="fm:MandatoryFMLink" name="Mandatory687" id="687" refs="//@urndef/@specDiagrams.3/@connections.2" dest="670" src="672"/>
@@ -1297,13 +1474,13 @@
       </connections>
     </specDiagrams>
     <specDiagrams xsi:type="ucm.map:UCMmap" name="Root Map" id="13">
-      <nodes xsi:type="ucm.map:StartPoint" name="Begin" id="448" x="30" y="170" succ="//@urndef/@specDiagrams.6/@connections.0" scenarioStartPoints="//@ucmspec/@scenarioGroups.0/@scenarios.0/@startPoints.0 //@ucmspec/@scenarioGroups.0/@scenarios.1/@startPoints.1 //@ucmspec/@scenarioGroups.0/@scenarios.2/@startPoints.0 //@ucmspec/@scenarioGroups.0/@scenarios.1/@startPoints.2">
-        <metadata name="_hits" value="2"/>
+      <nodes xsi:type="ucm.map:StartPoint" name="Begin" id="448" x="30" y="170" succ="//@urndef/@specDiagrams.6/@connections.0" scenarioStartPoints="//@ucmspec/@scenarioGroups.0/@scenarios.0/@startPoints.0 //@ucmspec/@scenarioGroups.0/@scenarios.1/@startPoints.1 //@ucmspec/@scenarioGroups.0/@scenarios.2/@startPoints.0">
+        <metadata name="_hits" value="1"/>
         <label deltaX="6" deltaY="-49"/>
         <precondition deltaX="40" deltaY="-17" label="" expression="true"/>
       </nodes>
       <nodes xsi:type="ucm.map:Stub" name="Authentication" id="458" x="105" y="170" succ="//@urndef/@specDiagrams.6/@connections.1 //@urndef/@specDiagrams.6/@connections.30" pred="//@urndef/@specDiagrams.6/@connections.32" dynamic="true">
-        <metadata name="_hits" value="2"/>
+        <metadata name="_hits" value="0"/>
         <label deltaX="-1" deltaY="-59"/>
         <bindings plugin="3">
           <in startPoint="14" stubEntry="//@urndef/@specDiagrams.6/@connections.32"/>
@@ -1413,25 +1590,25 @@
           <precondition label="" expression="true"/>
         </bindings>
       </nodes>
-      <nodes xsi:type="ucm.map:EndPoint" name="End" id="450" x="882" y="168" pred="//@urndef/@specDiagrams.6/@connections.29" scenarioEndPoints="//@ucmspec/@scenarioGroups.0/@scenarios.1/@endPoints.1">
+      <nodes xsi:type="ucm.map:EndPoint" name="End" id="450" x="882" y="168" pred="//@urndef/@specDiagrams.6/@connections.29">
         <metadata name="_hits" value="0"/>
         <label/>
         <postcondition deltaX="-40" deltaY="-20" label="" expression="true"/>
       </nodes>
-      <nodes xsi:type="ucm.map:OrFork" name="OrFork1005621" id="1005621" x="72" y="173" succ="//@urndef/@specDiagrams.6/@connections.32 //@urndef/@specDiagrams.6/@connections.33" pred="//@urndef/@specDiagrams.6/@connections.0">
-        <metadata name="_hits" value="2"/>
+      <nodes xsi:type="ucm.map:OrFork" name="OrFork1005621" id="1005621" x="59" y="171" succ="//@urndef/@specDiagrams.6/@connections.32 //@urndef/@specDiagrams.6/@connections.33" pred="//@urndef/@specDiagrams.6/@connections.0">
+        <metadata name="_hits" value="1"/>
       </nodes>
       <nodes xsi:type="ucm.map:EndPoint" name="EndPoint1005623" id="1005623" x="886" y="435" pred="//@urndef/@specDiagrams.6/@connections.34">
-        <metadata name="_hits" value="0"/>
+        <metadata name="_hits" value="1"/>
         <label/>
         <postcondition deltaX="-40" deltaY="-20" label="" expression="true"/>
       </nodes>
       <nodes xsi:type="ucm.map:Stub" name="Manual Transactions" id="1005633" x="473" y="439" succ="//@urndef/@specDiagrams.6/@connections.34" pred="//@urndef/@specDiagrams.6/@connections.35">
-        <metadata name="_hits" value="0"/>
+        <metadata name="_hits" value="1"/>
         <label/>
       </nodes>
       <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow1005635" id="1005635" x="114" y="406" succ="//@urndef/@specDiagrams.6/@connections.35" pred="//@urndef/@specDiagrams.6/@connections.33">
-        <metadata name="_hits" value="0"/>
+        <metadata name="_hits" value="1"/>
       </nodes>
       <connections xsi:type="ucm.map:NodeConnection" source="448" target="1005621"/>
       <connections xsi:type="ucm.map:NodeConnection" source="458" target="611" outBindings="//@urndef/@specDiagrams.6/@nodes.1/@bindings.0/@out.0 //@urndef/@specDiagrams.6/@nodes.1/@bindings.1/@out.0"/>
@@ -1482,10 +1659,10 @@
       <connections xsi:type="ucm.map:NodeConnection" source="458" target="634" outBindings="//@urndef/@specDiagrams.6/@nodes.1/@bindings.0/@out.1 //@urndef/@specDiagrams.6/@nodes.1/@bindings.1/@out.1"/>
       <connections xsi:type="ucm.map:NodeConnection" source="634" target="631"/>
       <connections xsi:type="ucm.map:NodeConnection" source="1005621" target="458" inBindings="//@urndef/@specDiagrams.6/@nodes.1/@bindings.0/@in.0 //@urndef/@specDiagrams.6/@nodes.1/@bindings.1/@in.0">
-        <condition label="" expression="isManual = false" description=""/>
+        <condition label="" expression="_GRL_Automated_Teller_Machine=100" description=""/>
       </connections>
       <connections xsi:type="ucm.map:NodeConnection" source="1005621" target="1005635">
-        <condition label="" expression="isManual =true" description=""/>
+        <condition label="" expression="_GRL_Automated_Teller_Machine&lt;100" description=""/>
       </connections>
       <connections xsi:type="ucm.map:NodeConnection" source="1005633" target="1005623"/>
       <connections xsi:type="ucm.map:NodeConnection" source="1005635" target="1005633"/>
@@ -1598,31 +1775,31 @@
     </specDiagrams>
     <specDiagrams xsi:type="ucm.map:UCMmap" name="Withdraw" id="905" parentStub="//@urndef/@specDiagrams.6/@nodes.4/@bindings.0">
       <nodes xsi:type="ucm.map:StartPoint" name="Begin withdrawal" id="906" x="34" y="38" succ="//@urndef/@specDiagrams.8/@connections.0" inBindings="//@urndef/@specDiagrams.6/@nodes.4/@bindings.0/@in.0" scenarioStartPoints="//@ucmspec/@scenarioGroups.0/@scenarios.1/@startPoints.0">
-        <metadata name="_hits" value="1"/>
+        <metadata name="_hits" value="0"/>
         <label/>
         <precondition deltaX="40" deltaY="-17" label="" expression="true"/>
       </nodes>
       <nodes xsi:type="ucm.map:EndPoint" name="End withdrawal" id="908" x="959" y="242" pred="//@urndef/@specDiagrams.8/@connections.1" outBindings="//@urndef/@specDiagrams.6/@nodes.4/@bindings.0/@out.0" scenarioEndPoints="//@ucmspec/@scenarioGroups.0/@scenarios.1/@endPoints.0">
-        <metadata name="_hits" value="1"/>
+        <metadata name="_hits" value="0"/>
         <label deltaX="-46" deltaY="4"/>
         <postcondition deltaX="-40" deltaY="-20" label="" expression="true"/>
       </nodes>
       <nodes xsi:type="ucm.map:RespRef" name="RespRef990" id="990" x="882" y="242" contRef="1000" succ="//@urndef/@specDiagrams.8/@connections.1" pred="//@urndef/@specDiagrams.8/@connections.22" respDef="989">
-        <metadata name="_hits" value="1"/>
+        <metadata name="_hits" value="0"/>
         <label deltaX="32" deltaY="-44"/>
       </nodes>
       <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow1021" id="1021" x="135" y="41" contRef="998" succ="//@urndef/@specDiagrams.8/@connections.2" pred="//@urndef/@specDiagrams.8/@connections.0">
-        <metadata name="_hits" value="1"/>
+        <metadata name="_hits" value="0"/>
       </nodes>
       <nodes xsi:type="ucm.map:RespRef" name="RespRef1023" id="1023" x="132" y="89" contRef="998" succ="//@urndef/@specDiagrams.8/@connections.3" pred="//@urndef/@specDiagrams.8/@connections.2" respDef="1022">
-        <metadata name="_hits" value="1"/>
+        <metadata name="_hits" value="0"/>
         <label deltaX="-112" deltaY="13"/>
       </nodes>
       <nodes xsi:type="ucm.map:OrFork" name="OrFork1049" id="1049" x="124" y="178" contRef="998" succ="//@urndef/@specDiagrams.8/@connections.4 //@urndef/@specDiagrams.8/@connections.5 //@urndef/@specDiagrams.8/@connections.6 //@urndef/@specDiagrams.8/@connections.15" pred="//@urndef/@specDiagrams.8/@connections.10">
-        <metadata name="_hits" value="1"/>
+        <metadata name="_hits" value="0"/>
       </nodes>
       <nodes xsi:type="ucm.map:RespRef" name="RespRef1092" id="1092" x="305" y="165" contRef="998" succ="//@urndef/@specDiagrams.8/@connections.7" pred="//@urndef/@specDiagrams.8/@connections.11" respDef="1091">
-        <metadata name="_hits" value="1"/>
+        <metadata name="_hits" value="0"/>
         <label deltaX="41" deltaY="-4"/>
       </nodes>
       <nodes xsi:type="ucm.map:RespRef" name="RespRef1094" id="1094" x="261" y="275" contRef="998" succ="//@urndef/@specDiagrams.8/@connections.8" pred="//@urndef/@specDiagrams.8/@connections.12" respDef="1093">
@@ -1634,10 +1811,10 @@
         <label deltaX="49"/>
       </nodes>
       <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow1097" id="1097" x="133" y="135" contRef="998" succ="//@urndef/@specDiagrams.8/@connections.10" pred="//@urndef/@specDiagrams.8/@connections.3">
-        <metadata name="_hits" value="1"/>
+        <metadata name="_hits" value="0"/>
       </nodes>
       <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow1098" id="1098" x="227" y="169" contRef="998" succ="//@urndef/@specDiagrams.8/@connections.11" pred="//@urndef/@specDiagrams.8/@connections.5">
-        <metadata name="_hits" value="1"/>
+        <metadata name="_hits" value="0"/>
       </nodes>
       <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow1099" id="1099" x="189" y="268" contRef="998" succ="//@urndef/@specDiagrams.8/@connections.12" pred="//@urndef/@specDiagrams.8/@connections.4">
         <metadata name="_hits" value="0"/>
@@ -1646,7 +1823,7 @@
         <metadata name="_hits" value="0"/>
       </nodes>
       <nodes xsi:type="ucm.map:OrJoin" name="OrJoin1118" id="1118" x="389" y="259" contRef="998" succ="//@urndef/@specDiagrams.8/@connections.14" pred="//@urndef/@specDiagrams.8/@connections.19 //@urndef/@specDiagrams.8/@connections.18 //@urndef/@specDiagrams.8/@connections.20">
-        <metadata name="_hits" value="1"/>
+        <metadata name="_hits" value="0"/>
       </nodes>
       <nodes xsi:type="ucm.map:RespRef" name="RespRef1148" id="1148" x="405" y="79" contRef="998" succ="//@urndef/@specDiagrams.8/@connections.16" pred="//@urndef/@specDiagrams.8/@connections.21" respDef="1147">
         <metadata name="_hits" value="0"/>
@@ -1656,7 +1833,7 @@
         <metadata name="_hits" value="0"/>
       </nodes>
       <nodes xsi:type="ucm.map:RespRef" name="RespRef1206" id="1206" x="377" y="163" contRef="998" succ="//@urndef/@specDiagrams.8/@connections.18" pred="//@urndef/@specDiagrams.8/@connections.7" respDef="1205">
-        <metadata name="_hits" value="1"/>
+        <metadata name="_hits" value="0"/>
         <label deltaX="12" deltaY="14"/>
       </nodes>
       <nodes xsi:type="ucm.map:RespRef" name="RespRef1222" id="1222" x="347" y="263" contRef="998" succ="//@urndef/@specDiagrams.8/@connections.19" pred="//@urndef/@specDiagrams.8/@connections.8" respDef="1221">
@@ -1671,30 +1848,30 @@
         <metadata name="_hits" value="0"/>
       </nodes>
       <nodes xsi:type="ucm.map:OrJoin" name="OrJoin1846" id="1846" x="843" y="244" contRef="1000" succ="//@urndef/@specDiagrams.8/@connections.22" pred="//@urndef/@specDiagrams.8/@connections.23 //@urndef/@specDiagrams.8/@connections.17 //@urndef/@specDiagrams.8/@connections.41">
-        <metadata name="_hits" value="1"/>
+        <metadata name="_hits" value="0"/>
       </nodes>
       <nodes xsi:type="ucm.map:RespRef" name="RespRef1854" id="1854" x="838" y="322" contRef="1000" succ="//@urndef/@specDiagrams.8/@connections.23" pred="//@urndef/@specDiagrams.8/@connections.36" respDef="1853">
-        <metadata name="_hits" value="1"/>
+        <metadata name="_hits" value="0"/>
         <label deltaX="56" deltaY="-17"/>
       </nodes>
       <nodes xsi:type="ucm.map:RespRef" name="RespRef1913" id="1913" x="496" y="254" contRef="998" succ="//@urndef/@specDiagrams.8/@connections.24" pred="//@urndef/@specDiagrams.8/@connections.30" respDef="1912">
-        <metadata name="_hits" value="1"/>
+        <metadata name="_hits" value="0"/>
         <label deltaX="17" deltaY="-41"/>
       </nodes>
       <nodes xsi:type="ucm.map:OrFork" name="OrFork1920" id="1920" x="632" y="246" contRef="1000" succ="//@urndef/@specDiagrams.8/@connections.25 //@urndef/@specDiagrams.8/@connections.26" pred="//@urndef/@specDiagrams.8/@connections.29">
-        <metadata name="_hits" value="1"/>
+        <metadata name="_hits" value="0"/>
       </nodes>
       <nodes xsi:type="ucm.map:OrJoin" name="OrJoin1923" id="1923" x="424" y="256" contRef="998" succ="//@urndef/@specDiagrams.8/@connections.27" pred="//@urndef/@specDiagrams.8/@connections.14 //@urndef/@specDiagrams.8/@connections.35">
-        <metadata name="_hits" value="1"/>
+        <metadata name="_hits" value="0"/>
       </nodes>
       <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow1934" id="1934" x="581" y="319" contRef="1000" succ="//@urndef/@specDiagrams.8/@connections.28" pred="//@urndef/@specDiagrams.8/@connections.26">
         <metadata name="_hits" value="0"/>
       </nodes>
       <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow1940" id="1940" x="573" y="250" contRef="1000" succ="//@urndef/@specDiagrams.8/@connections.29" pred="//@urndef/@specDiagrams.8/@connections.24">
-        <metadata name="_hits" value="1"/>
+        <metadata name="_hits" value="0"/>
       </nodes>
       <nodes xsi:type="ucm.map:OrFork" name="OrFork1950" id="1950" x="456" y="255" contRef="998" succ="//@urndef/@specDiagrams.8/@connections.30 //@urndef/@specDiagrams.8/@connections.31" pred="//@urndef/@specDiagrams.8/@connections.27">
-        <metadata name="_hits" value="1"/>
+        <metadata name="_hits" value="0"/>
       </nodes>
       <nodes xsi:type="ucm.map:RespRef" name="RespRef1956" id="1956" x="494" y="153" contRef="998" succ="//@urndef/@specDiagrams.8/@connections.32" pred="//@urndef/@specDiagrams.8/@connections.33" respDef="1147">
         <metadata name="_hits" value="0"/>
@@ -1710,18 +1887,18 @@
         <metadata name="_hits" value="0"/>
       </nodes>
       <nodes xsi:type="ucm.map:RespRef" name="RespRef2145" id="2145" x="791" y="375" contRef="1000" succ="//@urndef/@specDiagrams.8/@connections.36" pred="//@urndef/@specDiagrams.8/@connections.37" respDef="2144">
-        <metadata name="_hits" value="1"/>
+        <metadata name="_hits" value="0"/>
         <label deltaX="-30" deltaY="-37"/>
       </nodes>
       <nodes xsi:type="ucm.map:RespRef" name="RespRef2149" id="2149" x="707" y="378" contRef="1000" succ="//@urndef/@specDiagrams.8/@connections.37" pred="//@urndef/@specDiagrams.8/@connections.39" respDef="2148">
-        <metadata name="_hits" value="1"/>
+        <metadata name="_hits" value="0"/>
         <label deltaX="41" deltaY="-31"/>
       </nodes>
       <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow2154" id="2154" x="664" y="245" contRef="1000" succ="//@urndef/@specDiagrams.8/@connections.38" pred="//@urndef/@specDiagrams.8/@connections.25">
-        <metadata name="_hits" value="1"/>
+        <metadata name="_hits" value="0"/>
       </nodes>
       <nodes xsi:type="ucm.map:OrFork" name="OrFork2160" id="2160" x="706" y="245" contRef="1000" succ="//@urndef/@specDiagrams.8/@connections.39 //@urndef/@specDiagrams.8/@connections.40" pred="//@urndef/@specDiagrams.8/@connections.38">
-        <metadata name="_hits" value="1"/>
+        <metadata name="_hits" value="0"/>
       </nodes>
       <nodes xsi:type="ucm.map:RespRef" name="RespRef2167" id="2167" x="781" y="247" contRef="1000" succ="//@urndef/@specDiagrams.8/@connections.41" pred="//@urndef/@specDiagrams.8/@connections.42" respDef="2166">
         <metadata name="_hits" value="0"/>

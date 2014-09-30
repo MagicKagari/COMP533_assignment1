@@ -21,6 +21,9 @@
 \begin{document}
 \maketitle                              % creates title page
 
+\textit{Please see the important note at the end of this document before 
+attempting to execute the model.}
+
 \section{Task Breakdown}
 Ran Gao implemented the plugin map for the 'Withdraw' stub of the root map,
 as well as the goal model for the 'Customer' stakeholder. Patrick Diez
@@ -122,5 +125,49 @@ having negative impacts on some goals.
 	because it relies on each developper resetting the \textsc{id} every time they pull
 	from the versioning system.
 
-	
+	\paragraph{Important Note:} During the course of building this model
+	we've run into a constant series of issues with the  software.  On
+	several occaisions this interfered with saving, and caused us
+	to lose substantial amounts of work.  At some point, it seems that the 
+	file became corrupted.  At this time, it is not
+	possible to create and execute strategies.  The problem is that, after
+	creating a strategy, saving, closing, and re-opening the file, attempting 
+	to execute it causes Eclipse to hang.
+
+	We have tried 
+	solving this problem several ways, but we cannot figure out what is causing
+	it.  After several hours of collective work, our best guess is that 
+	there is no issue with the model logic \textit{per se}, but that the file 
+	is somehow corrupted.
+	It does seem to be related to a bug which occurs when selecting
+	certain elements, whereby those elements fail to highlight, though it is 
+	difficult to be sure.  In any case,
+	it is still possible execute the first strategy
+	(``1) Manual Transaction''), and this can be used to manually execute
+	the other two strategies as explained below.
+
+	To execute the strategy we call ``ATM - Low security'', stay on strategy
+	1, but manually select all features in the feature model except for:
+	\begin{itemize}
+		\item{Quick withdrawal option,}
+		\item{Fingerprint authentication,}
+		\item{Camera to see customer's back, and}
+		\item{Touchscreen.}
+	\end{itemize}
+
+	Now, looking at the scenario, you will see that the scenario now performs
+	authentication via the \texttt{Auth Card/Pin} plugin and performs 
+	a \texttt{Deposit}, and \texttt{Withdrawal}.
+
+	To execute the third strategy, which we call ``ATM---High security'', 
+	while still on the first strategy, ensure that \textit{all} elements are 
+	selected
+	in the feature model.  You will now see that the scenario executes via
+	the \texttt{Auth biometrics} plugin for the \texttt{Authentication} stub,
+	while still performing the \texttt{Deposit} and \texttt{Withdrawal}
+	transactions.
+
+	We hope you will not mind executing our model manually.  As already
+	mentioned, we spent a great deal of time trying to determine the source
+	of the problem but to no avail.
 \end{document}
